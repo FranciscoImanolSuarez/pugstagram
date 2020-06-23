@@ -1,0 +1,10 @@
+<script>
+    export let name = 'World';
+</script>
+
+
+<div class="Input">
+<!-- //BINDING -->
+    <input type="text" bind:value={name}>
+    <p>Hello {name}!</p>
+</div>
