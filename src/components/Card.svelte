@@ -5,6 +5,10 @@
 
     import {blur} from 'svelte/transition';
 
+
+    import { likeCount } from '../store/store.js';
+
+
     export let username;
     export let location;
     export let photo;
@@ -25,6 +29,11 @@
 
     function handleLike() {
       like = !like;
+      if(like){
+        likeCount.update(n => n + 1);
+      } else {
+        likeCount.update(n => n - 1);
+      }
     }
 
 </script>
